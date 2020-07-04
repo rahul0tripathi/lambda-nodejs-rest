@@ -10,7 +10,7 @@ const METHOD = {
     get: 'GET',
     post: 'POST'
 }
-const streamRouter = {
+const s3Router = {
     type: TYPE['route'],
     GET: {
         '/': {
