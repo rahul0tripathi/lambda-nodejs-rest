@@ -1,7 +1,7 @@
-const championshipRouter = require('./championship')
+const userRouter = require('./mysqlHandler')
 const {
-    streamRouter
-} = require('./stream')
+    s3Router
+} = require('./s3Handler')
 const TYPE = {
     resolver: 'RESOLVER',
     route: 'ROUTE'
@@ -12,8 +12,8 @@ module.exports =  {
       'api': {
         type: TYPE['route'],
         GET: {
-          'user': championshipRouter,
-          's3': streamRouter
+          'user': userRouter,
+          's3': s3Router
         },
         POST: null
       }
