@@ -5,7 +5,7 @@ const TYPE = {
     resolver: 'RESOLVER',
     route: 'ROUTE'
 }
-const mysqlRouter = {
+const userRouter = {
     type: TYPE['route'],
     GET: {
         '/': {
