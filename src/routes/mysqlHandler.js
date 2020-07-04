@@ -5,7 +5,7 @@ const TYPE = {
     resolver: 'RESOLVER',
     route: 'ROUTE'
 }
-const championshipRouter = {
+const mysqlRouter = {
     type: TYPE['route'],
     GET: {
         '/': {
