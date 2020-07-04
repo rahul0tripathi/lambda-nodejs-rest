@@ -1,0 +1,12 @@
+service: demo-service
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: ap-south-1
+functions:
+  ewarApp:
+    handler: handler.index
+    events:
+     - http: ANY /
+     - http: 'ANY {proxy +}'

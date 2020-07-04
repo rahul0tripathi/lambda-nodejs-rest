@@ -1,0 +1,7 @@
+ {
+        "awsLambda":{
+            "region":"ap-south-1",
+            "rdsProxy":"<RDS_PROXY>"
+        }
+    
+}
