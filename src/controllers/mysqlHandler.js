@@ -16,7 +16,7 @@ const {
 exposedApis.getUserById = (req) => {
     return new Promise(async (resolve, reject) => {
         try {
-            ewarDatabase.promise().query(sqlString.format(`SELECT * FROM ${databaseList.users} WHERE ${userFields.id} = ?`, req.params.id)).then(([rows, cols]) => {
+            Database.promise().query(sqlString.format(`SELECT * FROM ${databaseList.users} WHERE ${userFields.id} = ?`, req.params.id)).then(([rows, cols]) => {
                 rows = rows[0]
                 let attributes = [
                     /*
@@ -33,23 +33,7 @@ exposedApis.getUserById = (req) => {
         }
     })
 }
-exposedApis.getDetailsForParticularPhase = (req) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-                
-                    axios.get(<S3-URL>).then(async response => {
-                        resolve(formatRes(response, 200))
-                    }).catch(err => {
-                        reject(formatRes(null, null))
-                    })
-                
-          
 
-        } catch (error) {
-            reject(formatRes(null, null))
-        }
-    })
-};
 module.exports = {
     exposedApis
 }
