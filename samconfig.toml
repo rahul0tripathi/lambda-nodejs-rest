@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = STACK-NAME
+s3_bucket = STACK-BUCKET
+s3_prefix = STACK-BUCKET-PREFIX
+region = REGION
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"

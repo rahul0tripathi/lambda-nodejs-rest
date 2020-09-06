@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Sample lambda server
+  SAM Template for lambda-api-gateway
+
+Resources:
+  WebsiteLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./package
+      Handler: index.handler
+      Runtime: nodejs12.x
+      Timeout : 5
+      Role : lambda-arn
+      Environment:
+         Variables:
+             NODE_ENV: staging
+             LAMBDA : false
+      Events:
+        WebsiteApi:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
+
+Outputs:
+  WebsiteLambdaAPI:
+    Description: "API Gateway endpoint URL for  website function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+  WebsiteLambda:
+    Description: "website lambda function"
+    Value: !GetAtt WebsiteLambda.Arn

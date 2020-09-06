@@ -1,5 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 *.zip
+.aws-sam
 # compiled output
 /deploy
 /dist
@@ -9,7 +10,7 @@
 /bazel-out
 
 # dependencies
-/node_modules
+./package/node_modules
 
 # profiling files
 chrome-profiler-events.json

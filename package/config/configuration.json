@@ -1,0 +1,7 @@
+ {
+     "awsLambda": {
+         "region": "<AWS_REGION>",
+         "rdsProxy": "<RDS_PROXY>"
+     }
+
+ }
