@@ -7,11 +7,5 @@ Database.connect(function(err) {
 let core = require('./src/routes')
 const { formatRes } = require('./src/services')
 exports.handler = async (event, context) => {
-    try {
-        let res = await core.resolve(event)
-        return res;  
-    } catch (error) {
-        return formatRes(null,null)
-    }
-   
+   return core.resolve(event)
 }
